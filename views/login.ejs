@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Supplier Product Management</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <%- include('partials/header') %>
+
+    <h1>Login</h1>
+
+    <% if (typeof errors !== 'undefined' && errors.length > 0) { %>
+    <ul style="color: red">
+      <% errors.forEach(function(error) { %>
+      <li><%= error.msg %></li>
+      <% }); %>
+    </ul>
+    <% } %>
+
+    <form action="/auth/login" method="POST">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        id="username"
+        value="<%= typeof username !== 'undefined' ? username : '' %>"
+        required
+      />
+
+      <label for="password">Password</label>
+      <input type="password" name="password" id="password" required />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="/auth/register">Register here</a></p>
+
+    <%- include('partials/footer') %>
+  </body>
+</html>

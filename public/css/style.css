@@ -1,0 +1,197 @@
+/* General styles for body and container */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1200px;
+  color: #000000; /* changed text color to black */
+  /* Removed flex centering to allow vertical stacking */
+}
+
+.container {
+  max-width: 1200px; /* match header/footer width */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #007bff; /* match header/footer background */
+  color: #ffffff; /* white text for contrast */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  justify-content: space-between; /* spread content horizontally */
+  flex-wrap: nowrap; /* prevent wrapping */
+}
+
+/* Header navigation */
+.header-nav {
+  display: flex;
+  justify-content: space-between; /* chia đều 2 bên */
+  align-items: center;
+  background-color: #007bff;
+  padding: 10px 20px; /* thêm padding 2 bên cho thoáng */
+  margin-bottom: 20px;
+  color: #ffffff; /* chữ trắng */
+  width: 100%; /* chiếm 100% chiều ngang */
+  flex-wrap: nowrap; /* không xuống dòng */
+  box-sizing: border-box; /* tính cả padding vào width */
+}
+
+/* Content wrapper */
+.content-wrapper {
+  max-width: calc(700px + 100px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-right: 40px;
+}
+
+.nav-link {
+  color: #ffffff;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+.nav-user {
+  margin-left: auto;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 15px 0;
+  background-color: #007bff;
+  color: #ffffff;
+  margin-top: 40px;
+  border-radius: 0 0 8px 8px;
+  width: 100%; /* chiếm toàn bộ chiều ngang */
+  box-sizing: border-box; /* tính padding vào width */
+}
+
+/* Forms */
+form label {
+  display: block;
+  margin: 10px auto 5px;
+  max-width: 400px;
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 15px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+button,
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 10px 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+button:hover,
+input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Edit button style */
+.edit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 500;
+  min-width: 80px;
+  height: 38px;
+  box-sizing: border-box;
+}
+
+.edit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: 700;
+}
+
+/* Links */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Flash messages */
+.flash-message {
+  max-width: 400px;
+  margin: 10px auto;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.flash-message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.flash-message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}

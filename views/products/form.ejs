@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= product._id ? 'Edit Product' : 'Add New Product' %> - Supplier Product Management</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <%- include('../partials/header.ejs') %>
+
+    <h1><%= product._id ? 'Edit Product' : 'Add New Product' %></h1>
+
+    <form action="<%= formAction %>" method="<%= formMethod %>">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        value="<%= product.name || '' %>"
+        required
+      />
+
+      <label for="price">Price:</label>
+      <input
+        type="number"
+        id="price"
+        name="price"
+        value="<%= product.price || '' %>"
+        min="0"
+        step="0.01"
+        required
+      />
+
+      <label for="quantity">Quantity:</label>
+      <input
+        type="number"
+        id="quantity"
+        name="quantity"
+        value="<%= product.quantity || '' %>"
+        min="0"
+        required
+      />
+
+      <label for="supplier">Supplier:</label>
+      <select id="supplier" name="supplier" required>
+        <option value="">Select Supplier</option>
+        <% suppliers.forEach(supplier => { %>
+          <option value="<%= supplier._id %>" <%= product.supplier && product.supplier.toString() === supplier._id.toString() ? 'selected' : '' %>><%= supplier.name %></option>
+        <% }) %>
+      </select>
+
+      <button type="submit"><%= product._id ? 'Update' : 'Create' %></button>
+    </form>
+
+    <a href="/products">Back to Products</a>
+
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>
